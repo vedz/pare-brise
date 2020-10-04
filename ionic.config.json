@@ -1,7 +1,0 @@
-{
-  "name": "pare-brise",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
