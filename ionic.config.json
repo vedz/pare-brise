@@ -1,0 +1,7 @@
+{
+  "name": "pae-brise",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
