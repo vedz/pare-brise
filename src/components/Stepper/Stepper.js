@@ -12,7 +12,7 @@ import './Stepper.css';
 //Style pour le stepper
 const QontoConnector = withStyles({
     alternativeLabel: {
-        top: 10,
+        top: 17.5,
         left: 'calc(-50%)',
         right: 'calc(50%)',
     },
@@ -38,21 +38,29 @@ const useCustomStepIconStyles = makeStyles({
     root: {
         color: '#eaeaf0',
         display: 'flex',
-        height: 22,
+        height: 33,
         zIndex: 1,
         alignItems: 'center',
+        borderRadius: '50%',
+        backgroundColor: '#F1F1F1',
     },
     active: {
         color: '#784af4',
         fontWeight: 'bold',
+        border: '3px solid #784af4',
     },
 
     circle: {
-        width: 20,
-        height: 20,
+        width: 33,
+        height: 33,
         borderRadius: '50%',
         zIndex: 2,
-        backgroundColor: 'currentColor',
+
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+
+        alignItems: 'center'
     },
     completed: {
         color: '#784af4',
@@ -77,18 +85,33 @@ function CustomStepIcon(props) {
             {completed ? (
                 <Check className={classes.completed} />
             ) : (
-                <div className={classes.circle}>
-                    <span className="wtf">{icon}</span>
-                </div>
-            )}
+                    <div className={classes.circle}>
+                        <span className="wtf">{icon}</span>
+                    </div>
+                )}
         </div>
     );
 }
 
-const matStyles = makeStyles((theme) => ({
+const classesStepper = makeStyles((theme) => ({
     root: {
         padding: '10px 0',
     },
+}));
+
+const classesLabel = makeStyles((theme) => ({
+    root: {
+        '& $active': {
+            color: '#784af4',
+            fontWeight: 'bold'
+        },
+    },
+    active: {
+        color: 'red'
+    },
+    label: {
+        color: "#666666",
+    }
 }));
 
 function getSteps() {
@@ -96,20 +119,21 @@ function getSteps() {
 }
 
 const stepper = () => {
-    const classes = matStyles();
+    const classesS = classesStepper();
+    const classesL = classesLabel();
     const steps = getSteps();
     console.log('[ReservationStepper Component]');
 
     return (
         <div>
             <Stepper
-                classes={classes}
+                classes={classesS}
                 alternativeLabel
                 connector={<QontoConnector />}
             >
                 {steps.map((label) => (
                     <Step key={label}>
-                        <StepLabel StepIconComponent={CustomStepIcon}>
+                        <StepLabel classes={classesL} StepIconComponent={CustomStepIcon}>
                             {label}
                         </StepLabel>
                     </Step>
