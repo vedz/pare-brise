@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
-import Reservation from './containers/reservation/reservation';
+import Reservation from './containers/Reservation/Reservation';
 
 function App() {
-  return (
-    <div className="App">
-      <Reservation />
-    </div>
-  );
+    console.log('[App component]');
+    return (
+        <div className="App">
+            <Reservation />
+        </div>
+    );
 }
 
 export default App;
