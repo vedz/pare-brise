@@ -28,7 +28,7 @@ const QontoConnector = withStyles({
     },
     line: {
         borderColor: '#eaeaf0',
-        borderTopWidth: 3,
+        borderTopWidth: 5,
         borderRadius: 1,
     },
 })(StepConnector);
@@ -43,28 +43,28 @@ const useCustomStepIconStyles = makeStyles({
         alignItems: 'center',
         borderRadius: '50%',
         backgroundColor: '#F1F1F1',
+        border: '3px solid #F1F1F1',
     },
     active: {
         color: '#784af4',
         fontWeight: 'bold',
         border: '3px solid #784af4',
     },
-
     circle: {
         width: 33,
         height: 33,
         borderRadius: '50%',
         zIndex: 2,
-
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
-
         alignItems: 'center'
     },
     completed: {
-        color: '#784af4',
+        color: 'white',
+        backgroundColor: '#784af4',
         zIndex: 1,
+        border: '3px solid #784af4',
         fontSize: 18,
     },
 });
@@ -80,15 +80,18 @@ function CustomStepIcon(props) {
         <div
             className={clsx(classes.root, {
                 [classes.active]: active,
+                [classes.completed]: completed,
             })}
         >
-            {completed ? (
-                <Check className={classes.completed} />
-            ) : (
-                    <div className={classes.circle}>
-                        <span className="wtf">{icon}</span>
-                    </div>
-                )}
+            <div className={classes.circle}>
+                {completed ? (
+                    <Check className={classes.completed} />
+                ) : (
+                        <span className="stepNumber">{icon}</span>
+                    )}
+
+            </div>
+
         </div>
     );
 }
@@ -105,29 +108,31 @@ const classesLabel = makeStyles((theme) => ({
             color: '#784af4',
             fontWeight: 'bold'
         },
+        '& $completed': {
+            color: '#784af4',
+            fontWeight: 'normal'
+        },
+    },
+    completed: {
     },
     active: {
-        color: 'red'
     },
     label: {
         color: "#666666",
     }
 }));
 
-function getSteps() {
-    return ['Véhicule', 'Intervention', 'Adresse', 'Créneau'];
-}
 
-const stepper = () => {
+const stepper = ({ steps, activeStep }) => {
     const classesS = classesStepper();
     const classesL = classesLabel();
-    const steps = getSteps();
-    console.log('[ReservationStepper Component]');
+    console.log('[Stepper Component]');
 
     return (
         <div>
             <Stepper
                 classes={classesS}
+                activeStep={activeStep}
                 alternativeLabel
                 connector={<QontoConnector />}
             >
