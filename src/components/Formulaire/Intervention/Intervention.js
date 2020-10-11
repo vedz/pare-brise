@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const Intervention = () => {
+const Intervention = ({ register }) => {
     return (
         <div>
-            Partie Intervention
+            <input type="texte" name="test2" ref={register} />
         </div>
-    )
-}
+    );
+};
 
-export default Intervention
+export default Intervention;

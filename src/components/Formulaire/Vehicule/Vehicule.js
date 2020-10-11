@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const Vehicule = () => {
+const Vehicule = ({ register }) => {
     return (
         <div>
-            Partie véhicule
+            <input type="texte" name="test" ref={register} />
         </div>
-    )
-}
+    );
+};
 
-export default Vehicule
+export default Vehicule;
