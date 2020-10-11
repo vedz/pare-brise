@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import Formulaire from '../../components/Formulaire/Formulaire';
 import * as actionTypes from '../../store/actions'
 import { connect } from 'react-redux'
+import './Reservation.css'
 
 
 function getSteps() {

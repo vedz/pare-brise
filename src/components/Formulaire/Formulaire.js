@@ -4,6 +4,7 @@ import Creneau from './Creneau/Creneau';
 import Intervention from './Intervention/Intervention';
 import Vehicule from './Vehicule/Vehicule';
 import { connect } from 'react-redux'
+import './Formulaire.css'
 
 const Formulaire = (props) => {
     console.log("[ Formulaire ]", props.reservation)
@@ -40,8 +41,11 @@ const Formulaire = (props) => {
         }
     }
 
-    //J'ai mis un formulaire globale mais peut etre ce serait mieux de faire un form par partie pour que la validation soit plus simple
-    return getFormulaireStep()
+    return (
+        <div className="formulaire">
+            {getFormulaireStep()}
+        </div>)
+
 
 
         ;

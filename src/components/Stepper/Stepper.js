@@ -38,7 +38,7 @@ const useCustomStepIconStyles = makeStyles({
     root: {
         color: '#eaeaf0',
         display: 'flex',
-        height: 33,
+        // height: 33,
         zIndex: 1,
         alignItems: 'center',
         borderRadius: '50%',
@@ -98,6 +98,10 @@ function CustomStepIcon(props) {
 const classesStepper = makeStyles((theme) => ({
     root: {
         padding: '10px 0',
+        width: '400px',
+        '@media (min-width:767px)': {
+            width: '700px'
+        }
     },
 }));
 
@@ -128,7 +132,7 @@ const stepper = ({ steps, activeStep }) => {
     console.log('[Stepper Component]');
 
     return (
-        <div>
+        <div className="stepper">
             <Stepper
                 classes={classesS}
                 activeStep={activeStep}

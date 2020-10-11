@@ -1,8 +1,8 @@
 import * as actionTypes from './actions'
 
 const initialState = {
-    nom: 'Dahmani',
-    prenom: 'Kévin'
+    nom: '',
+    prenom: ''
 }
 
 const reducer = (state = initialState, action) => {
