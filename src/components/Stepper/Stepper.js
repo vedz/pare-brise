@@ -74,7 +74,6 @@ function CustomStepIcon(props) {
     const classes = useCustomStepIconStyles();
     const { active, completed, icon } = props;
 
-    console.log(props);
 
     return (
         <div
