@@ -2,35 +2,35 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Button from '@material-ui/core/Button';
 
-const Intervention = ({ reservation, onSubmit, activeStep, steps, handleBack }) => {
-
+const Intervention = ({
+    reservation,
+    onSubmit,
+    activeStep,
+    steps,
+    handleBack,
+}) => {
     const { register, handleSubmit } = useForm({
         defaultValues: {
-            ...reservation
-        }
+            ...reservation,
+        },
     });
 
     return (
-        <div>
+        <div className="container">
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input name="prenom" ref={register} />
+                <div className="wrapper-form"></div>
             </form>
-            <Button
-                color="primary"
-                disabled={activeStep === 0}
-                onClick={handleBack}
-                variant="contained"
-            >
-                Retour
-         </Button>
-            <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                onClick={handleSubmit(onSubmit)}
-            >
-                {activeStep === steps.length - 1 ? 'Terminé' : 'Suivant'}
-            </Button>
+
+            <div className="wrapper-buttons">
+                <Button
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    onClick={handleSubmit(onSubmit)}
+                >
+                    Accéder à l'étape Intervention
+                </Button>
+            </div>
         </div>
     );
 };

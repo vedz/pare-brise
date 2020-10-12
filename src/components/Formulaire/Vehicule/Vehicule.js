@@ -36,15 +36,13 @@ const styleInput = makeStyles({
 
 const styleInputVoiture = makeStyles({
     root: {
-        width: '100%',
-        marginTop: '0.5em',
-        border: '1px solid red',
-        background: 'yellow',
+        flex: 1,
     },
 });
 
 const Vehicule = ({ reservation, onSubmit, activeStep, steps, handleBack }) => {
     const styleI = styleInput();
+    const styleF = styleInputVoiture();
     const { register, handleSubmit } = useForm({
         defaultValues: {
             ...reservation,
@@ -73,7 +71,7 @@ const Vehicule = ({ reservation, onSubmit, activeStep, steps, handleBack }) => {
                             </div>
                         </div>
                         <SearchIcon className="immatriculation-input-rigth" />
-                        <p style={{ textAlign: 'center' }}>
+                        <p className="text-center">
                             Saisir avec des tirets pour les immatriculations au
                             format AA-000-AA ou avec des espaces pour celles au
                             format 000 AA 00
@@ -81,7 +79,7 @@ const Vehicule = ({ reservation, onSubmit, activeStep, steps, handleBack }) => {
                     </div>
                     <div className="assurance-title align-vertically">
                         <h2 className="title">Mon assurance</h2>
-                        <p style={{ textAlign: 'center' }}>
+                        <p className="text-center">
                             Je sélectionne mon assurance et saisis mon numéro de
                             police d'assurance :
                         </p>
@@ -90,6 +88,7 @@ const Vehicule = ({ reservation, onSubmit, activeStep, steps, handleBack }) => {
                     <div className="assurance-content align-vertically">
                         <div className="wrapper-fields">
                             <TextField
+                                classes={styleF}
                                 id="outlined-basic"
                                 label="Marque"
                                 variant="outlined"
@@ -97,6 +96,7 @@ const Vehicule = ({ reservation, onSubmit, activeStep, steps, handleBack }) => {
                                 inputRef={register()}
                             />
                             <TextField
+                                classes={styleF}
                                 id="outlined-basic"
                                 label="Modèle"
                                 variant="outlined"

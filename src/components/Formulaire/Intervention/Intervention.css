@@ -1,0 +1,34 @@
+.container {
+    width: 100%;
+    padding: 0.5em;
+}
+
+.wrapper-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+}
+
+.align-vertically {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 767px) {
+    .wrapper-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+    .align-vertically {
+        align-items: flex-start;
+    }
+}
+
+.title {
+    color: #784af4;
+    margin: 0;
+}
