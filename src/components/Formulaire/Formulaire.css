@@ -1,5 +1,11 @@
-.formulaire{
-    flex:1;
-    background-color: #F1F1F1;
-    padding: 2em;
+.formulaire {
+    flex: 1;
+    background-color: #f1f1f1;
+    padding: 1em;
+}
+
+@media (min-width: 767px) {
+    .formulaire {
+        padding: 2em;
+    }
 }

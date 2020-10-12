@@ -38,7 +38,6 @@ const useCustomStepIconStyles = makeStyles({
     root: {
         color: '#eaeaf0',
         display: 'flex',
-        // height: 33,
         zIndex: 1,
         alignItems: 'center',
         borderRadius: '50%',
@@ -58,7 +57,7 @@ const useCustomStepIconStyles = makeStyles({
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     completed: {
         color: 'white',
@@ -74,7 +73,6 @@ function CustomStepIcon(props) {
     const classes = useCustomStepIconStyles();
     const { active, completed, icon } = props;
 
-
     return (
         <div
             className={clsx(classes.root, {
@@ -86,11 +84,9 @@ function CustomStepIcon(props) {
                 {completed ? (
                     <Check className={classes.completed} />
                 ) : (
-                        <span className="stepNumber">{icon}</span>
-                    )}
-
+                    <span className="stepNumber">{icon}</span>
+                )}
             </div>
-
         </div>
     );
 }
@@ -100,8 +96,8 @@ const classesStepper = makeStyles((theme) => ({
         padding: '10px 0',
         width: '400px',
         '@media (min-width:767px)': {
-            width: '700px'
-        }
+            width: '700px',
+        },
     },
 }));
 
@@ -109,22 +105,19 @@ const classesLabel = makeStyles((theme) => ({
     root: {
         '& $active': {
             color: '#784af4',
-            fontWeight: 'bold'
+            fontWeight: 'bold',
         },
         '& $completed': {
             color: '#784af4',
-            fontWeight: 'normal'
+            fontWeight: 'normal',
         },
     },
-    completed: {
-    },
-    active: {
-    },
+    completed: {},
+    active: {},
     label: {
-        color: "#666666",
-    }
+        color: '#666666',
+    },
 }));
-
 
 const stepper = ({ steps, activeStep }) => {
     const classesS = classesStepper();
@@ -141,7 +134,10 @@ const stepper = ({ steps, activeStep }) => {
             >
                 {steps.map((label) => (
                     <Step key={label}>
-                        <StepLabel classes={classesL} StepIconComponent={CustomStepIcon}>
+                        <StepLabel
+                            classes={classesL}
+                            StepIconComponent={CustomStepIcon}
+                        >
                             {label}
                         </StepLabel>
                     </Step>

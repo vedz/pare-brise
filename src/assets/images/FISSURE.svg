@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>ic_break_color</title>
+    <desc>Created with Sketch.</desc>
+    <g id="ic_break_color" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(6.000000, 33.000000)">
+            <polyline id="Path-15" stroke="#00625C" stroke-width="0.8" points="26 1 38.0729489 4.76905147 38.0729489 5.51621841 40.5862687 6.32200836 38.0729489 10.3331082 53.4271765 13.0555824 49.8406174 15.1322249 57.8610333 15.9855393 52.4162193 21.9661641 57.8610333 23.2693414 58.2075817 24.7614701 59.7905928 24.7614701 63.9830129 27.0883694 63.9830129 28.7009726 78 34"></polyline>
+            <polyline id="Path-15-Copy" stroke="#00625C" points="31 1 41.2751329 4.24547028 41.2751329 5.09793521 44.1948352 6.16692823 41.8620307 9.90382691 58.9642719 12.7559728 55.3305263 14.3635031 60.9467458 15.1623863 56.1884563 21.784643 61.0787582 22.8724383 61.3543632 24.2275513 62.9817115 24.3686812 65.5366715 25.8614445 67.3917941 26.936754 67.3917941 28.3782439 82 34"></polyline>
+            <path d="M5,35 C13.7893412,32.165947 26.6725236,30.7489205 43.6495472,30.7489205 C60.6265708,30.7489205 73.7433884,32.165947 83,35 L71.4141283,3.58448908 C64.8197317,1.19482969 55.5648714,0 43.6495472,0 C31.734223,0 23.076487,0.858175597 17.676339,2.57452679 L5,35 Z" id="Path-8-Copy-2" stroke="#18B0A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <polygon id="Path-13-Copy-4" stroke="#18B0A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(84.000000, 23.000000) scale(-1, 1) translate(-84.000000, -23.000000) " points="89 22.2533886 88.7530016 19 79 19 79 27 87.2071421 27"></polygon>
+            <polygon id="Path-13-Copy-3" stroke="#18B0A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="10 22.2533886 9.75300156 19 0 19 0 27 8.20714206 27"></polygon>
+            <line x1="19" y1="32" x2="32.2728037" y2="19" id="Path-14-Copy-5" stroke="#18B0A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+            <line x1="38.0883526" y1="30.6525481" x2="50.4525578" y2="17.8075069" id="Path-14-Copy-4" stroke="#18B0A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+        </g>
+    </g>
+</svg>
