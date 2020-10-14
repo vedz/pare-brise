@@ -1,9 +1,11 @@
-import React from 'react';
+import React , {useState} from 'react';
 import { useForm } from 'react-hook-form';
 import Button from '@material-ui/core/Button';
 import { NATURE_INTERVENTION } from '../../../store/reducer';
-import PARE_BRISE from '../../../assets/images/PARE_BRISE.svg';
 import './Intervention.css';
+import Card from './Card/Card';
+import TypeDommage from './TypeDommage/TypeDommage';
+import VitreEndommagee from './VitreEndommagee/VitreEndommagee';
 
 const Intervention = ({
     reservation,
@@ -12,11 +14,45 @@ const Intervention = ({
     steps,
     handleBack,
 }) => {
+    console.log("INTERVENTION FORM")
+    let dynamicContent;
+    const [ natureIntervention, setNatureIntervention ] = useState(reservation.natureIntervention);
+    const [ natureInterventionTypeImpact, setNatureInterventionTypeImpact ] = useState(reservation.natureInterventionTypeImpact);
     const { register, handleSubmit } = useForm({
         defaultValues: {
             ...reservation,
         },
     });
+
+    const setNature = (code_nature) => {
+        console.log(code_nature);
+        setNatureIntervention(code_nature);
+    }
+
+    const setType = (type) => {
+        console.log(type);
+        setNatureInterventionTypeImpact(type);
+    }
+
+
+    switch(natureIntervention){
+        case NATURE_INTERVENTION.PARE_BRISE.code:
+            dynamicContent = <TypeDommage setType={setType} 
+                                          natureInterventionTypeImpact={natureInterventionTypeImpact}
+                                          register={register}
+                                          />
+            break;
+        case NATURE_INTERVENTION.LUNETTE_ARRIERE.code:
+            dynamicContent = null;
+            break;
+        case NATURE_INTERVENTION.VITRE_LATERALE_DROITE.code:
+            dynamicContent = <VitreEndommagee />
+            break;
+        case NATURE_INTERVENTION.VITRE_LATERALE_GAUCHE.code:
+            dynamicContent = <VitreEndommagee />
+            break;
+    }
+   
 
     return (
         <div className="container">
@@ -29,25 +65,27 @@ const Intervention = ({
                             déclarer d’autres vitres en bas de ce formulaire.
                         </p>
                     </div>
-                    {/* Créer un composant ItemImage. Trouver le moyen de rendre générique l'affichage des enums proprement */}
                     <div className="nature-content">
-                        <div className="wrapper-img">
-                            <span>Pare-brise</span>
-                            <img src={PARE_BRISE}></img>
-                        </div>
-                        <div className="wrapper-img">
-                            <span>Pare-brise</span>
-                            <img src={PARE_BRISE}></img>
-                        </div>
-                        <div className="wrapper-img">
-                            <span>Pare-brise</span>
-                            <img src={PARE_BRISE}></img>
-                        </div>
-                        <div className="wrapper-img">
-                            <span>Pare-brise</span>
-                            <img src={PARE_BRISE}></img>
-                        </div>
+                        <input type="hidden" value={natureIntervention}  name="natureIntervention" ref={register} />
+                        {Object.keys(NATURE_INTERVENTION).map((nature , index ) =>{
+                            return (
+                                <div key={nature} className="wrapper-card" onClick={()=> setNature(NATURE_INTERVENTION[nature].code)}>
+                                    <Card 
+                                        zoom={true}
+                                        img={NATURE_INTERVENTION[nature].img} 
+                                        name={NATURE_INTERVENTION[nature].label} 
+                                        active={natureIntervention === NATURE_INTERVENTION[nature].code} />
+                                </div> 
+                            )
+                        })
+                    }
                     </div>
+
+                    {dynamicContent}
+
+                    
+
+
                 </div>
             </form>
 
