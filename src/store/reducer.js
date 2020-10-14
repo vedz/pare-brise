@@ -35,7 +35,6 @@ export const NATURE_INTERVENTION = {
     VITRE_LATERALE_GAUCHE:  {
         label : 'Vitre latéral gauche',
         code:  'VITRE_LATERALE_GAUCHE',
-        img: LUNETTE_ARRIERE,
         img: VITRE_LATERALE_GAUCHE
     }
 };
@@ -99,7 +98,6 @@ const initialState = {
     modele: '',
     assureur: '',
     numAssurance: '',
-    modele: '',
     natureIntervention: 'PARE_BRISE',
     natureInterventionTypeImpact: '',
     natureInterventionVitre:'',
@@ -123,7 +121,7 @@ const initialState = {
         ville: '',
         pays: '',
         email: '',
-        telephone: '',
+        telephone: '', 
     },
     hasGarage: '',
     dateIntervention: '',
@@ -134,6 +132,9 @@ const reducer = (state = initialState, action) => {
         case actionTypes.UPDATE_RESERVATION:
             console.log(action.reservation);
             return { ...state, ...action.reservation };
+        
+        default:
+            break;
     }
 
     return state;
