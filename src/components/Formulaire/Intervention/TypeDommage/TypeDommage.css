@@ -1,0 +1,8 @@
+.typedommage-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+.typedommage-content > div {
+    flex: 1;
+}
