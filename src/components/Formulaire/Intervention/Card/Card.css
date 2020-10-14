@@ -1,0 +1,23 @@
+.card {
+    /*padding: 0.5em;*/
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card span {
+    color: #784af4;
+    margin-top: 0.5em;
+    font-weight: bold;
+}
+
+.card .zoom {
+    transform: scale(1.25);
+}
+
+.card.active {
+    border: 1px solid #784af4;
+}
