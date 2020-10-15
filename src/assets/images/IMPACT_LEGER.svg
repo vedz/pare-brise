@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>ic_inferior_color</title>
+    <desc>Created with Sketch.</desc>
+    <g id="ic_inferior_color" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(6.000000, 33.000000)">
+            <g id="Group-4" stroke="#18B0A6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M5,35 C13.7893412,32.165947 26.6725236,30.7489205 43.6495472,30.7489205 C60.6265708,30.7489205 73.7433884,32.165947 83,35 L71.4141283,3.58448908 C64.8197317,1.19482969 55.5648714,0 43.6495472,0 C31.734223,0 23.076487,0.858175597 17.676339,2.57452679 L5,35 Z" id="Path-8-Copy"></path>
+                <polygon id="Path-13-Copy" transform="translate(84.000000, 23.000000) scale(-1, 1) translate(-84.000000, -23.000000) " points="89 22.2533886 88.7530016 19 79 19 79 27 87.2071421 27"></polygon>
+                <polygon id="Path-13-Copy-2" points="10 22.2533886 9.75300156 19 0 19 0 27 8.20714206 27"></polygon>
+                <line x1="19" y1="32" x2="32.2728037" y2="19" id="Path-14-Copy-2"></line>
+                <line x1="40.40625" y1="30.2850255" x2="52.7704552" y2="18.3574872" id="Path-14-Copy-3"></line>
+            </g>
+            <polygon id="Path-16" stroke="#00625C" points="62.0063744 17.8359057 62.460422 17 62.3109083 17.8359057 62.789795 17.5369484 62.460422 18.0297983 63 18.209752 62.3109083 18.209752 62.460422 19 62.0063744 18.3174785 61.5327442 18.7413293 61.8153225 18.0297983 61 17.6709597"></polygon>
+        </g>
+    </g>
+</svg>

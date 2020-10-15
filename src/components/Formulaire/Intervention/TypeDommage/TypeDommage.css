@@ -1,0 +1,9 @@
+.typedommage-content {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.typedommage-content .wrapper-card {
+    flex: 0 1 30%;
+}
