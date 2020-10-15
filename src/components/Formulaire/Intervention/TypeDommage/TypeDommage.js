@@ -21,6 +21,7 @@ const TypeDommage = ({setType, register,natureInterventionTypeImpact}) => {
                                     <Card 
                                         img={TYPE_DOMMAGE[type].img} 
                                         zoom={false}
+                                        subTitle={TYPE_DOMMAGE[type].label}
                                         active={natureInterventionTypeImpact === TYPE_DOMMAGE[type].code} />
                                 </div> 
                             )

@@ -1,10 +1,11 @@
 import React , {useState} from 'react';
 import { useForm } from 'react-hook-form';
 import Button from '@material-ui/core/Button';
-import { NATURE_INTERVENTION } from '../../../store/reducer';
+import { NATURE_INTERVENTION, VITRE_GAUCHE, VITRE_DROITE } from '../../../store/reducer';
 import './Intervention.css';
 import Card from './Card/Card';
 import TypeDommage from './TypeDommage/TypeDommage';
+import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import VitreEndommagee from './VitreEndommagee/VitreEndommagee';
 
 const Intervention = ({
@@ -18,9 +19,10 @@ const Intervention = ({
     let dynamicContent;
     const [ natureIntervention, setNatureIntervention ] = useState(reservation.natureIntervention);
     const [ natureInterventionTypeImpact, setNatureInterventionTypeImpact ] = useState(reservation.natureInterventionTypeImpact);
+    const [ natureInterventionVitre, setNatureInterventionVitre] = useState(reservation.natureInterventionVitre);
     const { register, handleSubmit } = useForm({
         defaultValues: {
-            ...reservation,
+            ...reservation
         },
     });
 
@@ -32,6 +34,11 @@ const Intervention = ({
     const setType = (type) => {
         console.log(type);
         setNatureInterventionTypeImpact(type);
+    }
+
+    const setVitre = (type) => {
+        console.log(type);
+        setNatureInterventionVitre(type);
     }
 
 
@@ -46,10 +53,18 @@ const Intervention = ({
             dynamicContent = null;
             break;
         case NATURE_INTERVENTION.VITRE_LATERALE_DROITE.code:
-            dynamicContent = <VitreEndommagee />
+            dynamicContent = <VitreEndommagee   VITRE={VITRE_DROITE} 
+                                                setVitre={setVitre} 
+                                                natureInterventionVitre={natureInterventionVitre}
+                                                register={register}
+                            />
             break;
         case NATURE_INTERVENTION.VITRE_LATERALE_GAUCHE.code:
-            dynamicContent = <VitreEndommagee />
+            dynamicContent = <VitreEndommagee   VITRE={VITRE_GAUCHE} 
+                                                setVitre={setVitre} 
+                                                natureInterventionVitre={natureInterventionVitre}
+                                                register={register}
+                            />
             break;
     }
    
@@ -82,6 +97,25 @@ const Intervention = ({
                     </div>
 
                     {dynamicContent}
+
+                    <div className="photo-title align-vertically ">
+                        <h2 className="title">Une photo vaut plus qu'une description</h2>
+                        <p className="text-center">
+                        Pour faciliter l’intervention, transmettez-nous une photo de votre incident.
+                        </p>
+                    </div>
+
+                    <div className="photo-content">
+                        <div className="photo-button">
+                            <span>Ajouter une photo</span>
+                            <PhotoCameraIcon className="icon-camera"/>
+                        </div>
+                        <p className="text-center">
+                            2 fichiers au maximum.<br/>
+                            Limité à 4 Mo.<br/>
+                            Types autorisés : gif jpg png jpeg.
+                        </p>
+                    </div>
 
                     
 

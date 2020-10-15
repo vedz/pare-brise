@@ -76,17 +76,17 @@ export const VITRE_DROITE = {
 
 export const TYPE_DOMMAGE = {
     IMPACT_LEGER: {
-        label : 'Pare-brise',
+        label : 'Inférieur à une pièce de 2 €',
         code:'IMPACT_LEGER',
-        img:IMPACT_LEGER
+        img:IMPACT_LEGER,
     },
     IMPACT_IMPORTANT: {
-        label : 'Pare-brise',
+        label : 'Supérieur à une pièce de 2 €',
         code: 'IMPACT_IMPORTANT',
         img:IMPACT_IMPORTANT
     },
     FISSURE: {
-        label : 'Pare-brise',
+        label : 'Fissure',
         code:'FISSURE',
         img:FISSURE
     }
@@ -98,7 +98,7 @@ const initialState = {
     modele: '',
     assureur: '',
     numAssurance: '',
-    natureIntervention: 'PARE_BRISE',
+    natureIntervention: '',
     natureInterventionTypeImpact: '',
     natureInterventionVitre:'',
     nbreImpact: 0,
@@ -128,7 +128,7 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-    switch (action.type) {
+    switch (action.type) { 
         case actionTypes.UPDATE_RESERVATION:
             console.log(action.reservation);
             return { ...state, ...action.reservation };

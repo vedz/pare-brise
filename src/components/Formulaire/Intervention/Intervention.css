@@ -36,12 +36,42 @@
 .title {
     color: #784af4;
     margin: 0;
+    text-align: center;
 }
 
 .nature-content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 10px;
+    /* display: grid;
+    grid-template-columns: repeat(2, 180px);
+    grid-template-rows: repeat(2, 180px);
+    grid-gap: 10px;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     margin-bottom: 1em;
+}
+
+.wrapper-card {
+    flex: 0 1 150px;
+    margin-bottom: 0.5em;
+}
+
+@media (min-width: 380px) {
+    .wrapper-card {
+        flex: 0 1 168px;
+    }
+}
+
+.photo-button {
+    margin: 0 0 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    border: 1px solid #dddddd;
+    padding: 18px 64px 14px 24px;
+    position: relative;
+}
+
+.icon-camera {
+    position: absolute;
+    right: 24px;
+    color: #784af4;
 }
