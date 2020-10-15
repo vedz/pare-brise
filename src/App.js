@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ClientHistory from './containers/Administration/ClientHistory/ClientHistory';
 import Reservation from './containers/Reservation/Reservation';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     return (
         <div className="App">
             <Reservation />
+            {/* <ClientHistory /> */}
         </div>
     );
 }
