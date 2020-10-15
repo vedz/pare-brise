@@ -3,6 +3,7 @@ import './App.css';
 import Reservation from './containers/reservation/Reservation';
 import ClientHistory from './containers/reservation/Administration/ClientHistory/ClientHistory'
 
+//@@@Clean
 function App() {
     console.log('[App component]');
     return (
