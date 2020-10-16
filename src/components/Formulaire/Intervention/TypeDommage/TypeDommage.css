@@ -6,4 +6,8 @@
 
 .typedommage-content .wrapper-card {
     flex: 0 1 30%;
+    height: initial;
+}
+
+.wrapper-card-type{
 }

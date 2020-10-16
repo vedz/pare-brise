@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Reservation from './containers/reservation/Reservation';
 import Header from './components/Header/Header';
 import { MemoryRouter, BrowserRouter } from "react-router-dom";
 import ClientHistory from './containers/reservation/Administration/ClientHistory/ClientHistory'

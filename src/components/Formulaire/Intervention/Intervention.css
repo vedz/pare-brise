@@ -6,7 +6,7 @@
 .wrapper-form {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: auto;
 }
 
 .align-vertically {
@@ -23,7 +23,7 @@
     .wrapper-form {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
     }
     .align-vertically {
         align-items: flex-start;
@@ -52,12 +52,14 @@
 
 .wrapper-card {
     flex: 0 1 150px;
+    height: 150px;
     margin-bottom: 0.5em;
 }
 
 @media (min-width: 380px) {
     .wrapper-card {
         flex: 0 1 168px;
+        height: 168px;
     }
 }
 
