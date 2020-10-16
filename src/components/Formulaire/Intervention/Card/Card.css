@@ -7,6 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 .card span {
     color: #784af4;
@@ -15,12 +16,21 @@
 }
 
 .zoom {
-    transform: scale(1.15);
+    /* background-size: 125%; */
 }
 
 .card.active {
     border: 1px solid #784af4;
 }
+
+.card-image{
+    flex-grow: 1;
+    width: 100%;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
 
 @media (min-width: 380px) {
     .zoom {
